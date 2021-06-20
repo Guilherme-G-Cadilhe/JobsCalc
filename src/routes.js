@@ -16,7 +16,27 @@ const Profile = {
     index(req, res) {
       return res.render(views + "profile", { profile: Profile.data });
     },
-    update() {},
+    update(req, res) {
+      //req.body para pegar os dados
+      const data = req.body;
+      // definir quantas semanas tem em um ano : 52
+      const weeksPerYear = 52;
+      // remover as semanas de ferias das semanas do ano para pegar quantas semanas tem em um mês
+      const weeksPerMonth = (weeksPerYear - data["vacation-per-year"]) / 12;
+      // quantas horas por semana estou trabalhando
+      const weekTotalHours = data["hours-per-day"] * data["days-per-week"];
+      // total de horas trabalhadas no mes
+      const monthlyTotalHours = weekTotalHours * weeksPerMonth;
+      // Valor da minha hora
+      const valueHour = data["monthly-budget"] / monthlyTotalHours;
+
+      Profile.data = {
+        ...Profile.data,
+        ...req.body,
+        "value-hour": valueHour,
+      };
+      return res.redirect("/profile");
+    },
   },
 };
 
@@ -49,7 +69,7 @@ const Job = {
           ...job,
           remaining,
           status,
-          budget: Profile.data["value-hour"] * job["total-hours"],
+          budget: Job.services.calculateBudget(job, Profile.data["value-hour"]),
         };
       });
 
@@ -60,7 +80,7 @@ const Job = {
       return res.render(views + "job");
     },
     save(req, res) {
-      const lastId = Job.data[Job.data.length - 1]?.id || 1;
+      const lastId = Job.data[Job.data.length - 1]?.id || 0;
       // Pega o envio do formulario e cria um objeto com os dados
       Job.data.push({
         id: lastId + 1,
@@ -69,6 +89,59 @@ const Job = {
         "total-hours": req.body["total-hours"],
         created_at: Date.now(), // atribuindo data criação
       });
+      return res.redirect("/");
+    },
+    show(req, res) {
+      // Pega o id enviado pelo req
+      const jobId = req.params.id;
+      // Compara se o Id é igual o que já existe no data.id
+      const job = Job.data.find((job) => Number(job.id) === Number(jobId));
+      // Se o id não existir, retornar
+      if (!job) {
+        return res.send("Job not found!");
+      }
+      // calcula o preço do job pela função que fica em serviço
+      // atualiza o preço do job
+      job.budget = Job.services.calculateBudget(
+        job,
+        Profile.data["value-hour"]
+      );
+      // devolve o job atualizado
+      return res.render(views + "job-edit", { job });
+    },
+    update(req, res) {
+      // Pega o id enviado pelo req
+      const jobId = req.params.id;
+      // Compara se o Id é igual o que já existe no data.id
+      const job = Job.data.find((job) => Number(job.id) === Number(jobId));
+      // Se o id não existir, retornar
+      if (!job) {
+        return res.send("Job not found!");
+      }
+      // Pega as novas propriedades pelo req para atualizar o job
+      const updatedJob = {
+        ...job,
+        name: req.body.name,
+        "total-hours": req.body["total-hours"],
+        "daily-hours": req.body["daily-hours"],
+      };
+      // se o id do req for igual ao que ta no data.id, atualiza o job
+      Job.data = Job.data.map((job) => {
+        if (Number(job.id) === Number(jobId)) {
+          job = updatedJob;
+        }
+
+        return job;
+      });
+      res.redirect("/job/" + jobId);
+    },
+    delete(req, res) {
+      // pega o id pelo req
+      const jobId = req.params.id;
+      // olha pelo array até achar o id igual, então remove ele do array
+      // depois atualiza o array, tendo removido aquele
+      Job.data = Job.data.filter((job) => Number(job.id) !== Number(jobId));
+
       return res.redirect("/");
     },
   },
@@ -93,6 +166,7 @@ const Job = {
       // restam x dias
       return dayDiff;
     },
+    calculateBudget: (job, valueHour) => valueHour * job["total-hours"],
   },
 };
 
@@ -104,7 +178,11 @@ routes.get("/", Job.controllers.index);
 routes.get("/job", Job.controllers.create);
 routes.post("/job", Job.controllers.save);
 
-routes.get("/job/edit", (req, res) => res.render(views + "job-edit"));
+routes.get("/job/:id", Job.controllers.show);
+routes.post("/job/:id", Job.controllers.update);
+routes.post("/job/delete/:id", Job.controllers.delete);
+
 routes.get("/profile", Profile.controllers.index);
+routes.post("/profile", Profile.controllers.update);
 
 module.exports = routes;
