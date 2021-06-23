@@ -35,10 +35,8 @@
             Você tem 2 horas livres no seu dia
           </span>
           <a href="/profile" id="avatar-profile">
-            <p>Jakeliny <span>Ver perfil</span></p>
-            <img
-              src="https://avatars.githubusercontent.com/u/17316392?s=460&u=6912a91a70bc89745a2079fdcdad3bc3ce370f13&v=4"
-            />
+            <p>Guilherme <span>Ver perfil</span></p>
+            <img src="https://github.com/Guilherme-G-Cadilhe.png" />
           </a>
         </section>
 
@@ -83,8 +81,8 @@
             <div class="deadline column">
               <span>Prazo</span>
               <p>
-                <% if(job.status === "progress") { %> <%= job.remaining %> dias
-                para a entrega <% } else { %> Prazo encerrado <% } %>
+                <% if(job.status === "progress") { %> <%= job.remaining %> dias para a entrega <% }
+                else { %> Prazo encerrado <% } %>
               </p>
             </div>
             <div class="amount column">
@@ -96,11 +94,7 @@
             </div>
             <div class="actions column flex">
               <p class="sr-only">Ações</p>
-              <a
-                href="/job/<%= job.id %> "
-                class="button white edit"
-                title="Editar Job"
-              >
+              <a href="/job/<%= job.id %> " class="button white edit" title="Editar Job">
                 <img src="/images/edit-24.svg" alt="Editar Job" />
               </a>
               <button class="delete button white" title="Excluir Job">
@@ -129,9 +123,7 @@
 
         <footer>
           <a class="button gray" href="#">Cancelar</a>
-          <button class="button red" type="submit" form="delete-job">
-            Excluir Job
-          </button>
+          <button class="button red" type="submit" form="delete-job">Excluir Job</button>
         </footer>
       </div>
       <form method="post" action="/job/delete" id="delete-job"></form>
