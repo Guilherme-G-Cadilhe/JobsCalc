@@ -2,9 +2,10 @@ const express = require('express'); // Biblioteca
 const routes = express.Router(); // Objeto guarda rotas
 const ProfileController = require('./controllers/ProfileController.js');
 const JobController = require('./controllers/JobController');
+const DashboardController = require('./controllers/DashboardController');
 
 // request, response ( Pedido, Resposta)
-routes.get('/', JobController.index);
+routes.get('/', DashboardController.index);
 
 routes.get('/job', JobController.create);
 routes.post('/job', JobController.save);

@@ -22,4 +22,9 @@ module.exports = {
   update(newJob) {
     data = newJob;
   },
+  delete(id) {
+    // olha pelo array até achar o id igual, então remove ele do array
+    // depois atualiza o array, tendo removido aquele
+    data = data.filter((job) => Number(job.id) !== Number(id));
+  },
 };

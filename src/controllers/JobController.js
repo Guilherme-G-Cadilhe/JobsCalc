@@ -1,25 +1,7 @@
 const Job = require('../model/Job');
-const jobUtils = require('../utils/jobUtils');
+const jobUtils = require('../utils/JobUtils');
 const Profile = require('../model/Profile');
 module.exports = {
-  index(req, res) {
-    const jobs = Job.get();
-    const profile = Profile.get();
-    //Calculos dos Jobs
-    const updatedJobs = jobs.map((job) => {
-      const remaining = jobUtils.remainingDays(job);
-      const status = remaining <= 0 ? 'done' : 'progress';
-
-      return {
-        ...job,
-        remaining,
-        status,
-        budget: jobUtils.calculateBudget(job, profile['value-hour']),
-      };
-    });
-
-    return res.render('index', { jobs: updatedJobs });
-  },
   create(req, res) {
     // Render = Renderiza e compila um template(esj) em html
     return res.render('job');
@@ -85,9 +67,8 @@ module.exports = {
   delete(req, res) {
     // pega o id pelo req
     const jobId = req.params.id;
-    // olha pelo array até achar o id igual, então remove ele do array
-    // depois atualiza o array, tendo removido aquele
-    Job = Job.get().filter((job) => Number(job.id) !== Number(jobId));
+
+    Job.delete(jobId);
 
     return res.redirect('/');
   },
