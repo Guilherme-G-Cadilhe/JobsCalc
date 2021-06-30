@@ -1,33 +1,56 @@
-let data = [
-  {
-    id: 1,
-    name: 'Pizzaria Guloso',
-    'daily-hours': 2,
-    'total-hours': 1,
-    created_at: Date.now(),
-  },
-  {
-    id: 2,
-    name: 'OneTwo Project',
-    'daily-hours': 3,
-    'total-hours': 47,
-    created_at: Date.now(),
-  },
-];
+const Database = require('../db/config.js');
 
 module.exports = {
-  get() {
-    return data;
+  async get() {
+    const db = await Database();
+
+    const jobs = await db.all(`SELECT * FROM jobs`);
+
+    await db.close();
+
+    return jobs.map((job) => {
+      return {
+        id: job.id,
+        name: job.name,
+        'daily-hours': job.daily_hours,
+        'total-hours': job.total_hours,
+        created_at: job.created_at,
+      };
+    });
   },
-  update(newJob) {
-    data = newJob;
+  async update(newJob) {
+    const db = await Database();
+
+    db.run(`UPDATE jobs SET
+    id = ${newJob.id},
+    name = "${newJob.name}" ,
+    daily_hours = ${newJob['daily-hours']} ,
+    total_hours = ${newJob['total-hours']} ,
+    created_at = ${newJob.created_at}`);
+
+    await db.close();
   },
-  delete(id) {
-    // olha pelo array até achar o id igual, então remove ele do array
-    // depois atualiza o array, tendo removido aquele
-    data = data.filter((job) => Number(job.id) !== Number(id));
+  async delete(id) {
+    const db = await Database();
+
+    await db.run(`DELETE FROM jobs WHERE id = ${id}`);
+
+    await db.close();
   },
-  create(newJob) {
-    data.push(newJob);
+  async create(newJob) {
+    const db = await Database();
+    const jobs = await db.run(`INSERT INTO jobs (
+      name, 
+      daily_hours, 
+      total_hours,
+      created_at
+      ) VALUES (
+        "${newJob.name}",
+        ${newJob['daily-hours']},
+        ${newJob['total-hours']},
+        ${newJob.created_at}
+      )`);
+    await db.close();
+    return jobs;
   },
 };

@@ -6,13 +6,9 @@ module.exports = {
     // Render = Renderiza e compila um template(esj) em html
     return res.render('job');
   },
-  save(req, res) {
-    const jobs = Job.get();
-    const lastId = jobs[jobs.length - 1]?.id || 0;
+  async save(req, res) {
     // Pega o envio do formulario e cria um objeto com os dados
-
-    Job.create({
-      id: lastId + 1,
+    await Job.create({
       name: req.body.name,
       'daily-hours': req.body['daily-hours'],
       'total-hours': req.body['total-hours'],
@@ -21,25 +17,25 @@ module.exports = {
 
     return res.redirect('/');
   },
-  show(req, res) {
+  async show(req, res) {
     // Pega o id enviado pelo req
     const jobId = req.params.id;
     // Compara se o Id é igual o que já existe no data.id
-    const job = Job.get().find((job) => Number(job.id) === Number(jobId));
+    const job = await Job.get().find((job) => Number(job.id) === Number(jobId));
     // Se o id não existir, retornar
     if (!job) {
       return res.send('Job not found!');
     }
     // calcula o preço do job pela função que fica em serviço
     // atualiza o preço do job
-    job.budget = jobUtils.calculateBudget(job, Profile.get()['value-hour']);
+    job.budget = jobUtils.calculateBudget(job, await Profile.get()['value-hour']);
     // devolve o job atualizado
     return res.render('job-edit', { job });
   },
-  update(req, res) {
+  async update(req, res) {
     // Pega o id enviado pelo req
     const jobId = req.params.id;
-    const jobs = Job.get();
+    const jobs = await Job.get();
     // Compara se o Id é igual o que já existe no data.id
     const job = jobs.find((job) => Number(job.id) === Number(jobId));
     // Se o id não existir, retornar
@@ -54,7 +50,7 @@ module.exports = {
       'daily-hours': req.body['daily-hours'],
     };
     // se o id do req for igual ao que ta no data.id, atualiza o job
-    const newJobs = Job.get().map((job) => {
+    const newJobs = await Job.get().map((job) => {
       if (Number(job.id) === Number(jobId)) {
         job = updatedJob;
       }
@@ -62,15 +58,15 @@ module.exports = {
       return job;
     });
 
-    Job.update(newJobs);
+    await Job.update(newJobs);
 
     res.redirect('/job/' + jobId);
   },
-  delete(req, res) {
+  async delete(req, res) {
     // pega o id pelo req
     const jobId = req.params.id;
 
-    Job.delete(jobId);
+    await Job.delete(jobId);
 
     return res.redirect('/');
   },
