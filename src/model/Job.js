@@ -18,15 +18,15 @@ module.exports = {
       };
     });
   },
-  async update(newJob) {
+  async update(updatedJob, jobId) {
     const db = await Database();
 
-    db.run(`UPDATE jobs SET
-    id = ${newJob.id},
-    name = "${newJob.name}" ,
-    daily_hours = ${newJob['daily-hours']} ,
-    total_hours = ${newJob['total-hours']} ,
-    created_at = ${newJob.created_at}`);
+    await db.run(`UPDATE jobs SET
+    name = "${updatedJob.name}" ,
+    daily_hours = ${updatedJob['daily-hours']} ,
+    total_hours = ${updatedJob['total-hours']} 
+    WHERE id = ${jobId}
+    `);
 
     await db.close();
   },

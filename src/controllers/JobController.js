@@ -20,8 +20,9 @@ module.exports = {
   async show(req, res) {
     // Pega o id enviado pelo req
     const jobId = req.params.id;
+    const jobs = await Job.get();
     // Compara se o Id é igual o que já existe no data.id
-    const job = await Job.get().find((job) => Number(job.id) === Number(jobId));
+    const job = await jobs.find((job) => Number(job.id) === Number(jobId));
     // Se o id não existir, retornar
     if (!job) {
       return res.send('Job not found!');
@@ -35,30 +36,14 @@ module.exports = {
   async update(req, res) {
     // Pega o id enviado pelo req
     const jobId = req.params.id;
-    const jobs = await Job.get();
-    // Compara se o Id é igual o que já existe no data.id
-    const job = jobs.find((job) => Number(job.id) === Number(jobId));
-    // Se o id não existir, retornar
-    if (!job) {
-      return res.send('Job not found!');
-    }
-    // Pega as novas propriedades pelo req para atualizar o job
+
     const updatedJob = {
-      ...job,
       name: req.body.name,
       'total-hours': req.body['total-hours'],
       'daily-hours': req.body['daily-hours'],
     };
-    // se o id do req for igual ao que ta no data.id, atualiza o job
-    const newJobs = await Job.get().map((job) => {
-      if (Number(job.id) === Number(jobId)) {
-        job = updatedJob;
-      }
 
-      return job;
-    });
-
-    await Job.update(newJobs);
+    await Job.update(updatedJob, jobId);
 
     res.redirect('/job/' + jobId);
   },
