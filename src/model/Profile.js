@@ -1,3 +1,5 @@
+const Database = require('../db/config.js');
+
 let data = {
   name: 'Guilherme',
   avatar: 'https://github.com/Guilherme-G-Cadilhe.png',
@@ -9,7 +11,14 @@ let data = {
 };
 
 module.exports = {
-  get() {
+  async get() {
+    const db = await Database();
+
+    const data2 = await db.run(`SELECT * FROM PROFILE`);
+
+    await db.close();
+
+    console.log(data2);
     return data;
   },
   update(newData) {
