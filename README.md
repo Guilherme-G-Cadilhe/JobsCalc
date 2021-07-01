@@ -33,6 +33,7 @@
      * Shows how many Jobs are Done
      * Shows how many Jobs in total
      * Shows how much hours you have left in your day
+     * Shows how many days left for the delivery of the job
    * Technologies
    * Installing and Contributing
    * What have i learned?
@@ -58,7 +59,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 
 <h2 id="Features" align="center">⚙️ Features</h2>
 
-<h3>Create Jobs</h3>
+<h3> 🧷 Create Jobs</h3>
 
 - In the yellow **"Adicionar novo Job"** button, on the FrontPage, you can create a **new Job** and fill the forms about it.
 - The fields are: **Job's name**, **How much hours are you going to dedicate for the job**, **Estimate hours for doing this job**
@@ -72,7 +73,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
  
  ---
  
-<h3>Delete Jobs</h3>
+<h3> 🧷 Delete Jobs</h3>
 
 - On the right side of the chosen Job, the **Trash icon button** lets you **delete the Job**.
 - **Deleted Jobs are removed from the Database**
@@ -85,7 +86,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
  
  ---
 
- <h3>Update Jobs</h3>
+ <h3> 🧷Update Jobs</h3>
 
 - On the right side of the chosen Job, the **Pen icon button** lets you **Edit the Job**, and the **Save button** after editing lets you save it.
 - Editing the job lets you change the same fields as in the **Job Creation**
@@ -99,6 +100,61 @@ In addition, it is possible to plot the **Time Value** of the person who will be
  
  ---
 
+ <h3> 🧷 Configure and Update Profile data</h3>
+
+- On the top right side of the page, clicking in, and around the Profile Photo, you acess your Profile.
+- The Profile fields are: **Name**,**Img link**, **How much you wanna earn per month**, **What are your working hours per day**, **How many working days per week**, **How many week vacations per year**.
+- Your **Value per hour** will be calculated based on those numbers
+- **Updated Profiles are Saved in the Database**
+<details>
+<summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
+ <br>
+ 
+</details
+<br>
+ 
+ ---
+  
+ <h3> 🧷 Shows how many Jobs are in Progress / Done / in Total</h3>
+
+- On the left top center you will find a number that tracks your **Jobs in Progress**, **Jobs that are done(The delivery period has ended)**, and the **Total Jobs that exist currently**
+- Every New Job, Jobs that are in Progress and Jobs that the delivery period has passed. Changes the numbers
+
+<details>
+<summary> <b> Demonstration Images </b> <i>(Click here to Expand it!)</i> </summary>
+ <br>
+ 
+</details
+<br>
+ 
+ ---
+  
+ <h3> 🧷 Shows how much hours you have left in your day</h3>
+
+- The top center shows the hours remaining in your day, based on your **Profile Preferences and the Projects Currently in Progress**
+  
+<details>
+<summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
+ <br>
+ 
+</details
+<br>
+ 
+ ---
+  
+ <h3> 🧷  Shows how many days left for the delivery of the job</h3>
+
+- Starting with the Creation Data, it changes based on the **How much hours are you going to dedicate for the job** and **Estimate hours for doing this job** in the Job Creation / Update.
+  
+<details>
+<summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
+ <br>
+ 
+</details
+<br>
+ 
+ ---
+  
 <h2 id="Technologies" align="center">💻 Technologies</h2>
 
 In this project it was utilized: <i>**HTML, CSS, JavaScript, NodeJS, EJS , Express, SQLite**</i><br><br>
