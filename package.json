@@ -1,6 +1,9 @@
 {
   "name": "jobscalc",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.1.0"
+  },
   "description": "Freelance Calculator",
   "main": "src/server.js",
   "scripts": {
@@ -8,6 +11,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build",
     "server": "node ./src/server.js .",
     "init-db": "node src/db/init.js"
   },
