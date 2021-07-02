@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const routes = require('./routes');
+const routes = require('./routes.js');
 const path = require('path');
 
 // usando template engine

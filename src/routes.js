@@ -1,8 +1,8 @@
 const express = require('express'); // Biblioteca
 const routes = express.Router(); // Objeto guarda rotas
 const ProfileController = require('./controllers/ProfileController.js');
-const JobController = require('./controllers/JobController');
-const DashboardController = require('./controllers/DashboardController');
+const JobController = require('./controllers/JobController.js');
+const DashboardController = require('./controllers/DashboardController.js');
 
 // request, response ( Pedido, Resposta)
 routes.get('/', DashboardController.index);
