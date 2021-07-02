@@ -19,8 +19,10 @@
 
 
 ---
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a2faf4b4-a90c-4fa8-837a-e8026bd33fe7/deploy-status)](https://app.netlify.com/sites/grand-chase-bobnini/deploys)
+<br>
+<details align = "left">
+<summary> <b> Summary of the Contents </b> <i>(Click here to Expand it!)</i> </summary>
+ <br>
 
 <!--ts-->
    * About
@@ -41,11 +43,13 @@
    * Contributors
    * Author
 <!--te-->
+ </details
+
 <br>
 <br>
   
   <h1 align="center" >
-<a href="#">🚀 Website Page With Deploy on Netlify</a>
+<a href="#">🚀 Website Page With Deploy on </a>
 </h1>
 
 <h2 id ="about" align="center">📌 About</h2>
@@ -67,7 +71,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+  <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/1FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -80,7 +84,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/2FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -94,7 +98,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/3FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -109,7 +113,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/4FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -123,7 +127,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Images </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/5FeatureJobsCalc.png" width="800px" />
 </details
 <br>
  
@@ -136,7 +140,9 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc1.png" width="800px" />
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc2.png" width="800px" />
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc3.png" width="800px" />
 </details
 <br>
  
@@ -144,12 +150,12 @@ In addition, it is possible to plot the **Time Value** of the person who will be
   
  <h3> 🧷  Shows how many days left for the delivery of the job</h3>
 
-- Starting with the Creation Data, it changes based on the **How much hours are you going to dedicate for the job** and **Estimate hours for doing this job** in the Job Creation / Update.
+- Starting with the Creation Data, it changes based on the **How much hours are you going to dedicate for the job** and **Estimated hours for doing this job** in the Job Creation / Update.
   
 <details>
 <summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- 
+ <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/7FeatureJobsCalc.png" width="800px" />
 </details
 <br>
  
