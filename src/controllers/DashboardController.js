@@ -1,6 +1,6 @@
-const Job = require('../model/Job');
-const Profile = require('../model/Profile');
-const JobUtils = require('../utils/JobUtils');
+const Job = require('../model/Job.js');
+const Profile = require('../model/Profile.js');
+const JobUtils = require('../utils/JobUtils.js');
 module.exports = {
   async index(req, res) {
     const jobs = await Job.get();
