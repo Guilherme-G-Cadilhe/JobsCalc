@@ -1,6 +1,7 @@
 const Job = require('../model/Job.js');
 const jobUtils = require('../utils/JobUtils.js');
 const Profile = require('../model/Profile.js');
+
 module.exports = {
   create(req, res) {
     // Render = Renderiza e compila um template(esj) em html
