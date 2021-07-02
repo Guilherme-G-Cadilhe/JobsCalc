@@ -16,5 +16,6 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 // Routes
+const PORT = process.env.PORT || 80;
 server.use(routes);
-server.listen(3000 || process.env.PORT, () => console.log('Rodando'));
+server.listen(PORT, () => console.log('Rodando'));
