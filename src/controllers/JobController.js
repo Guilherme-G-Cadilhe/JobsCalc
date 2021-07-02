@@ -27,9 +27,9 @@ module.exports = {
     if (!job) {
       return res.send('Job not found!');
     }
-    // calcula o preço do job pela função que fica em serviço
+    const profile = await Profile.get();
     // atualiza o preço do job
-    job.budget = jobUtils.calculateBudget(job, await Profile.get()['value-hour']);
+    job.budget = jobUtils.calculateBudget(job, await profile['value-hour']);
     // devolve o job atualizado
     return res.render('job-edit', { job });
   },
