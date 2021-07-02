@@ -8,7 +8,7 @@
   "main": "src/server.js",
   "scripts": {
     "heroku-postbuild": "npm run build",
-    "start": "node ./src/server.js .",
+    "start": "node src/server.js .",
     "init-db": "node src/db/init.js"
   },
   "keywords": [],
