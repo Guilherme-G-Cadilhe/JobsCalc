@@ -47,11 +47,11 @@
 
 <br>
 <br>
-  
-  <h1 align="center" >
+ <!--
+<h1 align="center" >
 <a href="#">🚀 Website Page With Deploy on </a>
 </h1>
-
+--> 
 <h2 id ="about" align="center">📌 About</h2>
 
 **JobsCalc** is a calculation estimation application for **Freelance Projects**, where it is possible to register and exclude Jobs (Projects), obtaining a cost estimate for each job.<br>
@@ -166,12 +166,12 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 In this project it was utilized: <i>**HTML, CSS, JavaScript, NodeJS, EJS , Express, SQLite**</i><br><br>
  
 - <i>**HTML**</i> - The **Skeleton** of the Page.<br>
-- <i>**CSS**</i> - In progress.<br>
-- <i>**JavaScript**</i> - In progress.<br>
-- <i>**NodeJS**</i> - In progress.<br>
-- <i>**EJS**</i> - In progress.<br>
-- <i>**Express**</i> - In progress.<br>
-- <i>**SQLite**</i> - In progress.<br>
+- <i>**CSS**</i> - The **Page layout, responsiveness and style**.<br>
+- <i>**JavaScript**</i> - The **Functions, Calculations, and the central pillar of the page**.<br>
+- <i>**NodeJS**</i> - The **Runtime Environment where the Backend Magic happens**.<br>
+- <i>**EJS**</i> - The **Template Engine that runs Javascript in the HTML in a Dynamic way**<br>
+- <i>**Express**</i> - The one to set up our **Routes, Connections and host our Local Server**.<br>
+- <i>**SQLite**</i> - The **Database where we store our Data**.<br>
 
   
 <h2 align="center"> 📦 Installing and Contributing</h2>
@@ -182,6 +182,15 @@ To get started, fork the repository and then run the following commands:
    ```sh
    npm install
    ```
+2. Start the Local Server
+   ```sh
+   npm run start
+   ```
+If you want, you can delete the current SQL DB and create a new one.
+   ```sh
+   npm run init-db
+   ```
+  <br>
   Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
   </br></br>
 ✏️ To contribute, do the following:
@@ -194,7 +203,8 @@ To get started, fork the repository and then run the following commands:
   
 <h2 id="Learned" align="center">☕ What have i learned?</h2>
 
->In progress
+>This project was amazing for me, it was my first steps using **Node.js, Express, EJS and SQLite**, I learned a lot about **Backend, Data Normalization, Refactoring, Modularization and MVC Pattern**, everything in this project, I feel much more prepared for more complex challenges and projects, and I will continue to practice and learn more every day.<br>
+I want to thank the guys at **Rocketseat** who provided the **Marathon Discover 02 Event** where we built this project together, and who also taught me helped me throughout the process.
   
 ## 📝 License
 
