@@ -13,7 +13,7 @@
 ---
 
 <p align="center">
-  <img src="https://i.imgur.com/dbIq0YZ.png"> 
+  <img alt="JobsCalcMainGif" title="JobsCalc" src="/public/githubMedia/JobsCalc.gif" />
 </p>
 
 
@@ -71,7 +71,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
-  <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/1FeatureJobsCalc.gif" width="800px" />
+  <img alt="JobsCalc 1 Feature" title="JobsCalc" src="/public/githubMedia/1FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -84,7 +84,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/2FeatureJobsCalc.gif" width="800px" />
+ <img alt="JobsCalc 2 Feature" title="JobsCalc" src="/public/githubMedia/2FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -98,7 +98,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/3FeatureJobsCalc.gif" width="800px" />
+ <img alt="JobsCalc 3 Feature" title="JobsCalc" src="/public/githubMedia/3FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -113,7 +113,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Gif </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/4FeatureJobsCalc.gif" width="800px" />
+ <img alt="JobsCalc 4 Feature" title="JobsCalc" src="/public/githubMedia/4FeatureJobsCalc.gif" width="800px" />
 </details
 <br>
  
@@ -127,7 +127,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Images </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/5FeatureJobsCalc.png" width="800px" />
+ <img alt="JobsCalc 5 Feature" title="JobsCalc" src="/public/githubMedia/5FeatureJobsCalc.png" width="800px" />
 </details
 <br>
  
@@ -140,9 +140,9 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc1.png" width="800px" />
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc2.png" width="800px" />
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc3.png" width="800px" />
+ <img alt="JobsCalc 6 Feature" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc1.png" width="800px" />
+ <img alt="JobsCalc 6 Feature" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc2.png" width="800px" />
+ <img alt="JobsCalc 6 Featurec" title="JobsCalc" src="/public/githubMedia/6FeatureJobsCalc3.png" width="800px" />
 </details
 <br>
  
@@ -155,7 +155,7 @@ In addition, it is possible to plot the **Time Value** of the person who will be
 <details>
 <summary> <b> Demonstration Image </b> <i>(Click here to Expand it!)</i> </summary>
  <br>
- <img alt="JobsCalc" title="JobsCalc" src="/public/githubMedia/7FeatureJobsCalc.png" width="800px" />
+ <img alt="JobsCalc 7 Feature" title="JobsCalc" src="/public/githubMedia/7FeatureJobsCalc.png" width="800px" />
 </details
 <br>
  
@@ -191,7 +191,8 @@ If you want, you can delete the current SQL DB and create a new one.
    npm run init-db
    ```
   <br>
-  Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+  
+  Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
   </br></br>
 ✏️ To contribute, do the following:
 1. Fork the Project
