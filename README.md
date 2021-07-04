@@ -205,7 +205,7 @@ If you want, you can delete the current SQL DB and create a new one.
 <h2 id="Learned" align="center">☕ What have i learned?</h2>
 
 >This project was amazing for me, it was my first steps using **Node.js, Express, EJS and SQLite**, I learned a lot about **Backend, Data Normalization, Refactoring, Modularization and MVC Pattern**, everything in this project, I feel much more prepared for more complex challenges and projects, and I will continue to practice and learn more every day.<br>
-I want to thank the guys at **Rocketseat** who provided the **Marathon Discover 02 Event** where we built this project together, and who also taught me helped me throughout the process.
+I want to thank the teachers at **Rocketseat** who provided the **Marathon Discover 02 Event** where we built this project together, and who also taught and helped me throughout the process.
   
 ## 📝 License
 
