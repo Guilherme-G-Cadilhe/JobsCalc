@@ -1,5 +1,5 @@
 const Job = require('../model/Job.js');
-const jobUtils = require('../utils/JobUtils.js');
+const jobUtils = require('../utils/jobUtils.js');
 const Profile = require('../model/Profile.js');
 
 module.exports = {
